@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+  calibre-web:
+    image: justarchi/archisteamfarm
+    container_name: asf
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /etc/asf/config:/app/config
+      - /etc/asf/plugins:/app/plugins
+    ports:
+      - 1242:1242
+    restart: unless-stopped
