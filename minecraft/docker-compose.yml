@@ -1,0 +1,17 @@
+version: "3.5"
+services:
+  minecraft:
+    image: itzg/minecraft-bedrock-server
+    container_name: minecraft
+    restart: always
+    ports:
+      - "$PORT:19132/udp"
+    environment:
+      - EULA=true
+      - SERVER_NAME=$SERVER_NAME
+      - GAMEMODE=survival
+      - DIFFICULTY=normal
+      - ONLINE_MODE=false
+      - ALLOW_CHEATS=false
+    volumes:
+      - $VOLUME:/data
