@@ -1,13 +1,20 @@
 version: '3.5'
 services:
-  calibre-web:
+  asf:
     image: justarchi/archisteamfarm
     container_name: asf
     environment:
       - TZ=Asia/Shanghai
     volumes:
-      - /etc/asf/config:/app/config
-      - /etc/asf/plugins:/app/plugins
+      - asf_data/config:/app/config
+      - asf_data/plugins:/app/plugins
     ports:
-      - 1242:1242
+      - ${PORT}:1242
     restart: unless-stopped
+
+volumes:
+  asf_data:
+    driver_opts:
+      type: none
+      device: ${VOLUME_PATH}
+      o: bind
