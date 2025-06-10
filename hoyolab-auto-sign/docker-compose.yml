@@ -1,0 +1,7 @@
+services:
+  hoyolab_auto_sign:
+    image: cdgeass/hoyolab-auto-sign:latest
+    container_name: hoyolab-auto-sign
+    restart: always
+    environment:
+      - cookie=${COOKIE}

@@ -1,0 +1,8 @@
+services:
+  xray:
+    image: teddysun/xray:latest
+    container_name: xray
+    restart: always
+    volumes:
+      - /srv/xray:/etc/xray
+    network_mode: host

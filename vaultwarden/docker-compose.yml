@@ -1,0 +1,13 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: always
+    environment:
+      - DOMAIN=${VAULTWARDEN_DOMAIN}
+      - ADMIN_TOKEN=${VAULTWARDEN_ADMIN_TOKEN}
+      - SIGNUPS_ALLOWED="false"
+    volumes:
+      - /srv/vaultwarden:/data/
+    ports:
+      - 127.0.0.1:1101:80
