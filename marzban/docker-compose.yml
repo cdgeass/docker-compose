@@ -1,8 +1,0 @@
-services:
-  marzban:
-    image: gozargah/marzban:latest
-    container_name: marzban
-    restart: always
-    volumes:
-      - /srv/marzban:/var/lib/marzban
-    network_mode: host

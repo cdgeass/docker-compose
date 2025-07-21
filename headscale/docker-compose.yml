@@ -3,16 +3,12 @@ services:
     image: docker.io/headscale/headscale:v0.26
     restart: unless-stopped
     container_name: headscale
-    ports:
-      - "127.0.0.1:8080:8080"
-      - "127.0.0.1:9090:9090"
-      - "50443:50443"
-      - "3478:3478/udp"
     volumes:
       - /srv/headscale/config:/etc/headscale
       - /srv/headscale/lib:/var/lib/headscale
       - /srv/headscale/run:/var/run/headscale
     command: serve
+    network_mode: host
 
   headscale_ui:
     image: ghcr.io/gurucomputing/headscale-ui:latest
