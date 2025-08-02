@@ -12,5 +12,5 @@ services:
       - UMASK=022
     restart: unless-stopped
 
-volumnes:
+volumes:
   data:
