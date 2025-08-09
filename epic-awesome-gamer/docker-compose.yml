@@ -1,0 +1,11 @@
+services:
+  epic-awesome-gamer:
+    image: ghcr.io/qin2dim/epic-awesome-gamer:latest
+    restart: "no"
+    container_name: epic-awesome-gamer
+    env_file:
+      - .env
+    volumes:
+      - "/srv/epic-awesome-gamer/:/app/app/volumes"
+    entrypoint: [ "/usr/bin/tini", "--" ]
+    command: xvfb-run --auto-servernum --server-num=1 --server-args='-screen 0, 1920x1080x24' uv run app/deploy.py
