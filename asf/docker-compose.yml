@@ -1,0 +1,11 @@
+services:
+  asf:
+    image: justarchi/archisteamfarm
+    restart: unless-stopped
+    container_name: asf
+    volumes:
+      - asf_data:/app/config
+
+volumes:
+  asf_data:
+    external: true
