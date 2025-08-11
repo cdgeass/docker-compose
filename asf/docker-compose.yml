@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     container_name: asf
     volumes:
-      - asf_data:/app/config
+      - asf_data/config:/app/config
 
 volumes:
   asf_data:
