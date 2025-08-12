@@ -3,7 +3,7 @@ services:
     image: 'openlistteam/openlist:latest'
     container_name: openlist
     volumes:
-      - 'data:/opt/openlist/data'
+      - '/srv/openlist/data:/opt/openlist/data'
     ports:
       - '5244:5244'
     environment:
@@ -11,6 +11,3 @@ services:
       - PGID=0
       - UMASK=022
     restart: unless-stopped
-
-volumes:
-  data:
