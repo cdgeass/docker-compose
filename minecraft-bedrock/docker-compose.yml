@@ -1,6 +1,7 @@
 services:
   minecraft-bedrock:
     image: itzg/minecraft-bedrock-server
+    image_name: minecraft-bedrock
     environment:
       EULA: "TRUE"
     ports:
