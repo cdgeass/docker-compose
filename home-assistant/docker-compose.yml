@@ -1,0 +1,10 @@
+services:
+  home-assistant:
+    image: homeassistant/home-assistant:latest
+    restart: unless-stopped
+    container_name: home-assistant
+    volumes:
+      - '${HA_CONFIG}:/app/config'
+    environment:
+      - TZ=Asia/Shanghai
+    network_mode: host
