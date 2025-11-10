@@ -1,0 +1,19 @@
+services:
+  tailscale:
+    image: tailscale/tailscale:stable  
+    container_name: tailscale
+    network_mode: host
+    privileged: true
+    env_file:
+      - .env
+    environment:
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_STATE_DIR=${TS_STATE_DIR}
+      - TS_HOSTNAME=${TS_HOSTNAME}
+    volumes:
+      - ${TS_STATE_DIR_VOLUME}:${TS_STATE_DIR}
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - net_admin
+    restart: unless-stopped

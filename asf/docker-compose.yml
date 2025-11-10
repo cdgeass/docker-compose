@@ -4,8 +4,8 @@ services:
     restart: unless-stopped
     container_name: asf
     volumes:
-      - /srv/asf/config:/app/config
-      - /srv/asf/logs:/app/logs
-      - /srv/asf/plugins:/app/plugins
+      - '${ASF_CONFIG}:/app/config'
+      - '${ASF_LOGS}:/app/logs'
+      - '${ASF_PLUGINS}:/app/plugins'
     ports:
       - 1242:1242

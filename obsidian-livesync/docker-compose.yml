@@ -9,5 +9,5 @@ services:
       - '${OL_DATA}:/opt/couchdb/data'
       - '${OL_LOCAL_INI}:/opt/couchdb/etc/local.ini'
     ports:
-      - 5984:5984
+      - '127.0.0.1:5984:5984'
     restart: unless-stopped
